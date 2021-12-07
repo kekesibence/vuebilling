@@ -24,7 +24,8 @@
       </tr>
     </table>
   </div>
-</template>
+</template> 
+
 
 <script>
 export default {
