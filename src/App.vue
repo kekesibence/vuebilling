@@ -5,19 +5,22 @@
         <th>Title</th>
         <th>Price</th>
         <th>Quantity</th>
+        <th>Total value</th>
         <th>Delete/Edit</th>
       </tr>
       <tr v-for="row in rows" v-bind:key="row">
         <td>{{row.title}}</td>
         <td>{{row.price}}</td>
         <td>{{row.quantity}}</td>
+        <td>{{row.price * row.quantity}}</td>
         <td><button v-on:click="deleteRow(row.title)">X</button><button>Edit</button></td>
       </tr>
       <tr>
         <td><input type="text" name="title"  placeholder="Title" v-model="inputTitle"></td>
         <td><input type="number" name="price"  placeholder="Price" v-model="inputPrice"></td>
         <td><input type="number" name="quantity" placeholder="Quantity" v-model="inputQuantity"></td>
-        <td v-on:click="add">Add</td>
+        <td></td>
+        <td><button v-on:click="add">Add</button></td>
       </tr>
     </table>
   </div>
@@ -130,6 +133,36 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input {
+  width: 100;
+  background-color: #A36846;
+  border: none;
+  font-size: 14pt;
+}
+
+input::placeholder{
+  color: rgb(175, 175, 175);
+}
+
+input, select, textarea{
+    color: white;
+}
+
+textarea:focus, input:focus {
+    color: white;
+}
+
+button {
+  background-color: #A36846;
+  font-size: 14pt;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  color: red;
 }
 
 body{
